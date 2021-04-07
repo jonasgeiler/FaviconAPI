@@ -102,8 +102,8 @@ EMAIL;
 
 		try {
 			$package = Package::fromFile($uploadedImage);
-		} catch (NotSquareException) {
-			$f3->error(400, 'Image is not a square');
+		} catch (NotSquareException $e) {
+			$f3->error(400, $e->getMessage());
 
 			return; // So PHPStorm is happy...
 		}
