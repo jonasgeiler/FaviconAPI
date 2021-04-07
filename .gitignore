@@ -2,7 +2,6 @@
 lib
 assets
 
-composer.lock
 .env
 test.png
 
