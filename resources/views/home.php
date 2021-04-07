@@ -180,25 +180,27 @@ Content-Disposition: form-data; name="image"
 			emailSubmit.addEventListener('click', async function () {
 				if (!isValidEmail(emailField.value)) return;
 
-				const body = 'email=' + encodeURIComponent(emailField.value);
-
 				const response = await fetch('/api/register', {
 					method:  'POST',
 					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-					body
+					body: 'email=' + encodeURIComponent(emailField.value)
 				});
 
-				const {text: error} = await response.json();
-
 				resultAlert.style.display = null;
-				resultAlert.classList.add(response.ok ? 'success' : 'error');
-				resultAlert.innerText = response.ok
-					? 'We have just sent you your API key, please check your email! (Also look into the spam folder)'
-					: error;
 
 				if (response.ok) {
+					resultAlert.classList.remove('error');
+					resultAlert.classList.add('success');
+					resultAlert.innerText = 'We have just sent you your API key, please check your email! (Also look into the spam folder)';
 					emailSubmit.disabled = true;
 					emailField.value = '';
+				} else {
+					const error = await response.json();
+
+					resultAlert.classList.remove('success');
+					resultAlert.classList.add('error');
+					resultAlert.innerText = error.text || 'An unknown error occurred';
+					console.error(error);
 				}
 			});
 		</script>
