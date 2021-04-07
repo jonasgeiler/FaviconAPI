@@ -1,6 +1,6 @@
 {
-	"name": "skayo/f3-boilerplate",
-	"description": "Boilerplate for creating Web Applications with F3 (Fat-Free Framework)",
+	"name": "skayo/favicon-api",
+	"description": "Simple API for generating favicons",
 	"license": "MIT",
 	"type": "project",
 	"require": {
