@@ -3,8 +3,8 @@
 namespace Models;
 
 use Base;
-use Prefab;
 use DB\SQL;
+use Prefab;
 
 class BaseModel extends Prefab {
 

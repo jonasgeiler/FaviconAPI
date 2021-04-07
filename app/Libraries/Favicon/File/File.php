@@ -9,6 +9,6 @@ interface File {
 	 *
 	 * @return string
 	 */
-	public function getData(): string;
+	public function getData (): string;
 
 }

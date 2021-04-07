@@ -13,15 +13,16 @@ class Key {
 	 * @return false|string
 	 * @throws \Exception
 	 */
-	public static function generate($length = 40): bool|string {
+	public static function generate ($length = 40): bool|string {
 		$bytes = random_bytes($length);
-		return substr(str_replace(['+', '/'], '', base64_encode($bytes)), 0, $length);
+
+		return substr(str_replace([ '+', '/' ], '', base64_encode($bytes)), 0, $length);
 	}
 
 	/**
 	 * Validates the API key provided in the header
 	 */
-	public static function validate(): void {
+	public static function validate (): void {
 		$f3 = Base::instance();
 		$user = User::instance();
 

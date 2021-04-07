@@ -183,7 +183,7 @@ Content-Disposition: form-data; name="image"
 				const response = await fetch('/api/register', {
 					method:  'POST',
 					headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-					body: 'email=' + encodeURIComponent(emailField.value)
+					body:    'email=' + encodeURIComponent(emailField.value)
 				});
 
 				resultAlert.style.display = null;

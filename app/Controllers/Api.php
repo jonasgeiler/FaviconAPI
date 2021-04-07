@@ -22,7 +22,6 @@ class Api {
 	 *
 	 * @param \Base $f3
 	 *
-	 * @throws \JsonException
 	 * @throws \Exception
 	 */
 	public function register (Base $f3): void {
@@ -103,8 +102,9 @@ EMAIL;
 
 		try {
 			$package = Package::fromFile($uploadedImage);
-		} catch (NotSquareException $e) {
+		} catch (NotSquareException) {
 			$f3->error(400, 'Image is not a square');
+
 			return; // So PHPStorm is happy...
 		}
 

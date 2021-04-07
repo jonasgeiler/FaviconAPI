@@ -37,8 +37,8 @@
 			<h3 class="branding">&#x26A1; FaviconAPI</h3>
 
 			<h2>Privacy Policy</h2>
-			<p>Your privacy is important to us. It is FaviconAPI&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may collect
-				about you, including across our website, <a href="https://favicon.skayo.dev">https://favicon.skayo.dev</a>, and other sites we own and operate. </p>
+			<p>Your privacy is important to us. It is FaviconAPI&#39;s policy to respect your privacy and comply with any applicable law and regulation regarding any personal information we may
+				collect about you, including across our website, <a href="https://favicon.skayo.dev">https://favicon.skayo.dev</a>, and other sites we own and operate. </p>
 			<p>This policy is effective as of 25 March 2021 and was last updated on 25 March 2021. </p>
 			<h3>Information We Collect</h3>
 			<p>Information we collect includes both information you knowingly and actively provide us when using or participating in any of our services and promotions, and any information
