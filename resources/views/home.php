@@ -90,14 +90,13 @@
 
 			<h3>Errors</h3>
 			<p>
-				If an error occurs, the API will respond with a status code and a JSON document with some information about the error.<br />
+				If an error occurs, the API will respond with the according status code and a JSON document with some information about the error.<br />
 				Example response:
 			</p>
 			<pre><code>{
     "status": "Bad Request",
     "code": 400,
-    "text": "You can only upload one image at a time",
-    "success": false
+    "text": "You can only upload one image at a time"
 }</code></pre>
 
 			<h3>POST <i>/api/generate</i></h3>
@@ -119,11 +118,10 @@ Content-Disposition: form-data; name="image"
 (some image data ...)
 --X-EXAMPLE-BOUNDARY--</code></pre>
 			<p>
-				The API responds with a JSON document containing the download URL of the generated ZIP archive.<br />
+				The API responds with a <code>200 OK</code> status code and a JSON document containing the download URL of the generated ZIP archive.<br />
 				Example response:
 			</p>
 			<pre><code>{
-    "success": true,
     "download_url": "<?= $URL ?>/download/1ro9dnzb2crax.zip"
 }</code></pre>
 		</section>
@@ -190,11 +188,11 @@ Content-Disposition: form-data; name="image"
 					body
 				});
 
-				const {success, text: error} = await response.json();
+				const {text: error} = await response.json();
 
 				resultAlert.style.display = null;
-				resultAlert.classList.add(success ? 'success' : 'error');
-				resultAlert.innerText = success
+				resultAlert.classList.add(response.ok ? 'success' : 'error');
+				resultAlert.innerText = response.ok
 					? 'We have just sent you your API key, please check your email! (Also look into the spam folder)'
 					: error;
 			});

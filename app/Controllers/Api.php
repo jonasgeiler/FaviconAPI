@@ -14,6 +14,7 @@ class Api {
 
 	public function __construct (Base $f3) {
 		$f3->AJAX = true;
+		header('Content-Type: application/json');
 	}
 
 	/**
@@ -59,7 +60,7 @@ EMAIL;
 			$f3->error(500, 'Could not send email');
 		}
 
-		echo json_encode([ 'success' => true ], JSON_THROW_ON_ERROR);
+		echo "{}"; // Just empty JSON
 	}
 
 	/**
@@ -97,7 +98,7 @@ EMAIL;
 		$uploadedImage = array_keys($files)[0];
 
 		if (!$files[$uploadedImage]) {
-			$f3->error(400, 'File is not an image');
+			$f3->error(416, 'File is not an image');
 		}
 
 		try {
@@ -117,7 +118,6 @@ EMAIL;
 		unlink($uploadedImage);
 
 		echo json_encode([
-			'success'      => $success,
 			'download_url' => $f3->URL . $zipFile,
 		], JSON_THROW_ON_ERROR);
 	}
