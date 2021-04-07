@@ -11,6 +11,7 @@ storage/logs/*
 storage/tmp/*
 storage/uploads/*
 
+!public/download/.gitkeep
 !storage/cache/.gitkeep
 !storage/logs/.gitkeep
 !storage/tmp/.gitkeep
