@@ -149,7 +149,6 @@ $f3->ONERROR = static function (\Base $f3) {
 	}
 
 	if ($f3->AJAX) {
-		$error['success'] = false;
 		echo json_encode($error, JSON_THROW_ON_ERROR);
 	} else {
 		echo \View::instance()->render('_error.php', 'text/html', $error);
