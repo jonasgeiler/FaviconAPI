@@ -195,6 +195,11 @@ Content-Disposition: form-data; name="image"
 				resultAlert.innerText = response.ok
 					? 'We have just sent you your API key, please check your email! (Also look into the spam folder)'
 					: error;
+
+				if (response.ok) {
+					emailSubmit.disabled = true;
+					emailField.value = '';
+				}
 			});
 		</script>
 	</body>
