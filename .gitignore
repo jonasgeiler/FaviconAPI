@@ -6,6 +6,7 @@ assets
 test.png
 
 public/download/*
+storage/database.sqlite
 storage/cache/*
 storage/logs/*
 storage/tmp/*

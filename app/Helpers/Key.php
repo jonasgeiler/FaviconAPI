@@ -28,7 +28,7 @@ class Key {
 		$apiKey = $f3->HEADERS['X-Api-Key'] ?? null;
 
 		if (!$apiKey || !$user->isApiKeyValid($apiKey)) {
-			$f3->error(401, 'No API key provided');
+			$f3->error(401, 'Invalid API key provided');
 		}
 	}
 

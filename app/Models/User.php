@@ -6,10 +6,9 @@ class User extends BaseModel {
 
 	protected const INIT_QUERY = <<<SQL
 CREATE TABLE IF NOT EXISTS users (
-	id INT(11) NOT NULL AUTO_INCREMENT,
-	email VARCHAR(320) NOT NULL,
-	api_key VARCHAR(40) NOT NULL,
-	PRIMARY KEY (id)
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	email TEXT NOT NULL,
+	api_key TEXT NOT NULL
 )
 SQL;
 
