@@ -90,7 +90,7 @@
 
 			<h3>Errors</h3>
 			<p>
-				If an error occurs, the API will respond with a status code and a JSON document with some information about the error.
+				If an error occurs, the API will respond with a status code and a JSON document with some information about the error.<br />
 				Example response:
 			</p>
 			<pre><code>{
@@ -104,7 +104,7 @@
 			<p>
 				This is currently the only API endpoint you can use.<br />
 				To generate a favicon send a <code>POST</code> request to <code><?= $URL ?>/api/generate</code>.<br />
-				Upload the image by encoding it in the body as <code>multipart/form-data</code>. (Any field name)<br />
+				Upload the image by encoding it in the body as <code>multipart/form-data</code> (Any field name).<br />
 				Example request:
 			</p>
 			<pre><code>POST /api/register HTTP/1.1
