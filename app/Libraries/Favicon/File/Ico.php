@@ -58,19 +58,19 @@ class Ico implements File {
 		rsort($sizes); // Sort sizes highest to lowest
 
 		foreach ($sizes as $targetSize) {
-			$currentSize = $image->getWidth();
+			$clone = clone $image;
+			$currentSize = $clone->getWidth();
 
 			while ($currentSize / 2 >= $targetSize) {
 				$currentSize /= 2;
-				$image->resize($currentSize, $currentSize);
+				$clone->resize($currentSize, $currentSize);
 			}
 
 			if ($currentSize > $targetSize) {
-				$clone = clone $image;
 				$clone->resize($targetSize, $targetSize);
 				$this->addImageData($clone, $targetSize);
 			} else {
-				$this->addImageData($image, $targetSize);
+				$this->addImageData($clone, $targetSize);
 			}
 		}
 	}
