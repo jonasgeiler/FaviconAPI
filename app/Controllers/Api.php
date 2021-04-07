@@ -108,14 +108,14 @@ EMAIL;
 			return; // So PHPStorm is happy...
 		}
 
+		unlink($uploadedImage);
+
 		$zipFile = "/download/$hash.zip";
 		$success = $package->writeZip($f3->PUBLIC . $zipFile);
 
 		if (!$success) {
 			$f3->error(500, 'Could not create ZIP archive');
 		}
-
-		unlink($uploadedImage);
 
 		echo json_encode([
 			'download_url' => $f3->URL . $zipFile,
