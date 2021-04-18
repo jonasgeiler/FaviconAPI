@@ -106,7 +106,7 @@
 				Upload the image by encoding it in the body as <code>multipart/form-data</code> (Any field name).<br />
 				Example request:
 			</p>
-			<pre><code>POST /api/register HTTP/1.1
+			<pre><code>POST /api/generate HTTP/1.1
 Host: <?= $HOST . PHP_EOL ?>
 Content-Type: multipart/form-data; boundary=X-EXAMPLE-BOUNDARY
 Accept: application/json
